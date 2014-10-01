@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+        >
+
+<h:head>
+    <title>
+        spring-data-mongodb-java-ee-7-primefaces-5
+    </title>
+</h:head>
+
+<h:body>
+    <h1>spring-data-mongodb-java-ee-7-primefaces-5</h1>
+
+    <h:form>
+        <p:commandButton action="#{itemBean.create()}" value="create new item" update=":items-form"/>
+    </h:form>
+
+    <h:form id="items-form">
+        <ul>
+            <ui:repeat value="#{itemBean.items}" var="item">
+                <li>
+                    #{item}
+                    - <p:commandLink actionListener="#{itemBean.delete(item)}" value="delete" update="@form"/>
+                </li>
+            </ui:repeat>
+        </ul>
+    </h:form>
+
+
+</h:body>
+</html>
