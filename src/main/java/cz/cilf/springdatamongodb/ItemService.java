@@ -1,10 +1,10 @@
 package cz.cilf.springdatamongodb;
 
-import javax.ejb.Stateless;
+import javax.ejb.Singleton;
 import javax.inject.Inject;
 import java.util.List;
 
-@Stateless
+@Singleton
 public class ItemService {
 
     @Inject
